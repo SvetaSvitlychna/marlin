@@ -32,18 +32,26 @@
                     </div>
                     <div class="panel-container show">
                         <ol class="breadcrumb page-breadcrumb">
-                        <?php $breadcrumbs = ['Главная'=>'#', 'PHP'=> '#', 'Функции'=>''];
-                        foreach ($breadcrumbs as $key => $value) {
-                            if (!empty($value)){
+                        <?php $breadcrumbs = [
+                                ['title'=> 'Главная',
+                                    'url'=>'http://marlin.test/',
 
-                            echo "<li class=\"breadcrumb-item\"><a href=\"$value\">$key</a></li>";
+                                    ],
+                            ['title'=>'Task',
+                                'url'=>'http://marlin.test/task_1.php',
+                               ],
+                            [ 'title'=>'Функции',
+                                'url'=>'',
+                                ]
+                        ];
+                        foreach ($breadcrumbs as $value) {
+                            if (!empty($value['url'] )){?>
 
-                        }else{
-                                echo "<li class=\"breadcrumb-item active\">$key</li>";
-                            }
-                        }
-                         ?>
-                        </ol>
+                            <li class="breadcrumb-item"><a href="<?php echo $value['url']?>"><?php echo $value['title']?></a></li>
+                        <?php }else{?>
+                                <li class="breadcrumb-item active"><?php echo $value['title']?></li>
+                        <?php  }}?>
+                            </ol>
 
                         </div>
                     </div>

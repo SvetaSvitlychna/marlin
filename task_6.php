@@ -32,86 +32,89 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
+                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
 
+            <?php    $users = [
+                    [  'photo'=>'img/demo/authors/sunny.png',
+                        'name' =>' Sunny A.',
+                        'width'=>'5',
+                        'height'=>'5',
+                        'job' =>'UI/UX Expert',
+                        'company'=>'Lead Author,',
+                        'twitter_link'=>'https://twitter.com/@myplaneticket',
+                        'twitter_name'=>'@myplaneticket',
+                        'wrapbootstrap_link'=>'https://wrapbootstrap.com/user/myorange',
+                        'wrapbootstrap_title'=>'Contact Sunny',
+                        'status'=>'1'],
+                    [
+                        'photo'=>'img/demo/authors/josh.png',
+                        'name' =>'Jos K.',
+                        'width'=>'5',
+                        'height'=>'5',
+                        'job' =>'ASP.NET Developer',
+                        'company'=>'Partner &amp; Contributor',
+                        'twitter_link'=>'https://twitter.com/@atlantez',
+                        'twitter_name'=>'@atlantez',
+                        'wrapbootstrap_link'=>'https://wrapbootstrap.com/user/Walapa',
+                        'wrapbootstrap_title'=>'Contact Jos',
+                        'status'=>'1'],
+                    [
+                            'photo'=>'img/demo/authors/jovanni.png',
+                        'name' =>'Jovanni Lo',
+                        'width'=>'5',
+                        'height'=>'5',
+                        'job' =>'PHP Developer',
+                        'company'=>' Partner &amp; Contributor',
+                        'twitter_link'=>'https://twitter.com/@lodev09',
+                        'twitter_name'=>'@lodev09',
+                        'wrapbootstrap_link'=>'https://wrapbootstrap.com/user/lodev09',
+                        'wrapbootstrap_title'=>'Contact Jovanni',
+                        'status'=>'0'],
+                    [
+                            'photo'=>'img/demo/authors/roberto.png',
+                        'name' =>' Roberto R',
+                        'width'=>'5',
+                        'height'=>'5',
+                        'job' =>'Rails Developer',
+                        'company'=>' Partner &amp; Contributor',
+                        'twitter_link'=>'https://twitter.com/@sildur',
+                        'twitter_name'=>'@sildur',
+                        'wrapbootstrap_link'=>'https://wrapbootstrap.com/user/sildur',
+                        'wrapbootstrap_title'=>'Contact Roberto',
+                        'status'=>'0']
+                    ];
 
-
-<?php
-
-$users =['user1' =>['image' =>'img/demo/authors/sunny.png',
-                    'name' => 'Sunny A.',
-                    'department' =>'Lead Author ',
-                    'job' =>'UI/UX Expert',
-                    'twitter_link' =>'https://twitter.com/@myplaneticket',
-                    'twitter' =>'@myplaneticket',
-                    'wrapbootstrap' =>'https://wrapbootstrap.com/user/myorange',
-                    'wrapbootstrap_title' =>'Contact Sunny',
-                    'active_status' =>true],
-         'user2'  =>['image' =>'img/demo/authors/josh.png',
-                    'name' => ' Jos K.',
-                    'department' =>'Partner &amp; Contributor',
-                    'job' =>'ASP.NET Developer ',
-                    'twitter_link' =>'https://twitter.com/@atlantez',
-                    'twitter' =>'@atlantez',
-                    'wrapbootstrap' =>'https://wrapbootstrap.com/user/Walapa',
-                    'wrapbootstrap_title' =>'Contact Jos',
-                    'active_status' =>true],
-         'user3'  =>['image' =>'img/demo/authors/jovanni.png',
-                    'name' => 'Jovanni L.',
-                    'department' =>'Partner &amp; Contributor',
-                    'job' =>'PHP Developer',
-                    'twitter_link' =>'https://twitter.com/@lodev09',
-                    'twitter' =>'@lodev09',
-                    'wrapbootstrap' =>'https://wrapbootstrap.com/user/lodev09',
-                    'wrapbootstrap_title' =>'Contact Jovanni',
-                    'active_status' =>false],
-
-         'user4'  =>['image' =>'img/demo/authors/roberto.png',
-                    'name' => 'Roberto R.',
-                    'department' =>' Partner &amp; Contributor',
-                    'job' =>'Rails Developer',
-                    'twitter_link' =>'https://twitter.com/@sildur',
-                    'twitter' =>'@sildur',
-                    'wrapbootstrap' =>'https://wrapbootstrap.com/user/sildur',
-                    'wrapbootstrap_title' =>'Contact Roberto',
-                    'active_status' =>false],
-
-];
-
-
-foreach ($users as $user){
-    if ($user['active_status'] === false){
+            foreach ($users as $user){
+    if ($user['status'] === '0'){
 
 ?>
-                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-        <div class="banned rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="<?php echo $user['image']?>" alt="<?php echo $user['name']?> " class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                                <div class="banned rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                <img src="<?php echo $user['photo']?>" alt="<?php echo $user['name']?> " class="img-thumbnail img-responsive rounded-circle" style="width:<?php echo $user['width']?>rem; height: <?php echo $user['height']?>rem;">
                                 <div class="ml-2 mr-3">
                                     <h5 class="m-0">
                                         <?php echo $user['name'] .'  ('.$user['job'].')'?>
                                         <small class="m-0 fw-300">
-                                            <?php echo $user['department']?>
+                                            <?php echo $user['company']?>
                                         </small>
                                     </h5>
-                                    <a href="<?php $user['twitter_link'] ?>" class="text-info fs-sm" target="_blank"><?php echo $user['twitter']?></a> -
-                                    <a href="<?php $user['wrapbootstrap'] ?>" class="text-info fs-sm" target="_blank" title="<?php echo $user['wrapbootstrap_title']?>"><i class="fal fa-envelope"></i></a>
+                                    <a href="<?php $user['twitter_link'] ?>" class="text-info fs-sm" target="_blank"><?php echo $user['twitter_name']?></a> -
+                                    <a href="<?php $user['wrapbootstrap_link'] ?>" class="text-info fs-sm" target="_blank" title="<?php echo $user['wrapbootstrap_title']?>"><i class="fal fa-envelope"></i></a>
                                 </div>
-                            </div>
-
+                                </div>
                            <?php } else { ?>
-                               <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-        <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-            <img src="<?php echo $user['image']?>" alt="<?php echo $user['name']?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-            <div class="ml-2 mr-3">
-                <h5 class="m-0">
-                    <?php echo $user['name'] .'  ('.$user['job'].')'?>
-                    <small class="m-0 fw-300">
-                        <?php echo $user['department']?>
-                    </small>
-                </h5>
-                <a href="<?php $user['twitter_link'] ?>" class="text-info fs-sm" target="_blank"><?php echo $user['twitter']?></a> -
-                <a href="<?php $user['wrapbootstrap'] ?>" class="text-info fs-sm" target="_blank" title="<?php echo $user['wrapbootstrap_title']?>"><i class="fal fa-envelope"></i></a>
-            </div>
-        </div>
+                                   <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                    <img src="<?php echo $user['photo']?>" alt="<?php echo $user['name']?>" class="img-thumbnail img-responsive rounded-circle" style="width:<?php echo $user['width']?>rem; height: <?php echo $user['height']?>rem;">
+                                    <div class="ml-2 mr-3">
+                                        <h5 class="m-0">
+                                            <?php echo $user['name'] .'  ('.$user['job'].')'?>
+                                            <small class="m-0 fw-300">
+                                                <?php echo $user['company']?>
+                                            </small>
+                                        </h5>
+                                        <a href="<?php $user['twitter_link'] ?>" class="text-info fs-sm" target="_blank"><?php echo $user['twitter_name']?></a> -
+                                        <a href="<?php $user['wrapbootstrap_link'] ?>" class="text-info fs-sm" target="_blank" title="<?php echo $user['wrapbootstrap_title']?>"><i class="fal fa-envelope"></i></a>
+                                    </div>
+                                   </div>
 
                 <?php } }?>
 

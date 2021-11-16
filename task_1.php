@@ -44,12 +44,21 @@
                                         </div>
                                     </div>
                                     <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
-                                    <?php $listsGroup=['Reports', 'Analytics','Export', 'Storage'];
-                                        foreach ($listsGroup as $listGroup){
-                                            echo "<li class=\"list-group-item\">
-                                                    <span data-filter-tags=\"reports file\">$listGroup</span>
-                                                    </li>";
-                                        } ?>
+                                    <?php $listsGroup=[
+                                            ['title'=>'Reports',
+                                                'tags'=>'reports file'],
+                                    ['title'=>'Analytics',
+                                        'tags'=>'analytics graphs'],
+                                    ['title'=>'Export',
+                                        'tags'=>'export download'],
+                                    ['title'=>'Storage',
+                                        'tags'=>'storage']];
+                                        foreach ($listsGroup as $listGroup){?>
+                                         <li class="list-group-item">
+                                                    <span data-filter-tags="<?php echo $listGroup["tags"];?>"><?php echo $listGroup["title"];?></span>
+                                             <?php } ?>
+                                         </li>
+
                                     </ul>
                                     <div class="filter-message js-filter-message mt-0 fs-sm"></div>
                                 </div>

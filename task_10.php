@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,13 +38,16 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
+                                    <?php if(isset($_SESSION['message'])) { ?>
                                     <div class="alert alert-danger fade show" role="alert">
-                                        You should check in on some of those fields below.
+                                       <?php echo $_SESSION['message'];
+                                       unset ($_SESSION['message'])?>
                                     </div>
-                                     <form action="" method="POST">
+                                    <?php } ?>
+                                     <form action="formValidateToTask10.php" method="POST">
                                         <label class="form-label" for="simpleinput">Text</label>
                                         <input type="text" id="simpleinput" name="text" class="form-control">
-                                        <button class="btn btn-success mt-3" name="submit">Submit</button>
+                                        <button class="btn btn-success mt-3" name="submit" type="Submit">Submit</button>
                                     </form>
                                 </div>
                             </div>

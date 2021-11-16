@@ -32,6 +32,7 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
+                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
 <?php
 $host = 'localhost';
 $user = 'root';
@@ -45,7 +46,6 @@ $result = mysqli_query($link, 'SELECT * FROM users');
                             if ($user['active_status'] === '0'){
 
                             ?>
-                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
                                 <div class="banned rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                     <img src="<?php echo $user['image']?>" alt="<?php echo $user['name']?> " class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                     <div class="ml-2 mr-3">
@@ -61,7 +61,7 @@ $result = mysqli_query($link, 'SELECT * FROM users');
                                 </div>
 
                                 <?php } else { ?>
-                                <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
+
                                     <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                         <img src="<?php echo $user['image']?>" alt="<?php echo $user['name']?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                         <div class="ml-2 mr-3">

@@ -1,30 +1,3 @@
-<?php
-
-
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$dbName = 'marlin';
-
-
-
-$link = mysqli_connect($host, $user, $pass, $dbName);
-//$result = mysqli_query($link, 'INSERT INTO `texts` value ("text")');
-if(isset($_POST) && !empty($_POST) ){
-    $text =$_POST['text'];
-    $submit =$_POST['submit'];
-if(isset($_POST['submit']) && isset($_POST['text']))  {
-            $mysqli = "INSERT INTO `texts`(`text`) VALUES ('{$text}')";
-        if (mysqli_query($link, $mysqli)) {
-
-            echo '<p style="margin-left:15px">Запись добавлена</p>';
-
-        }
-
-}}
-    ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,12 +38,12 @@ if(isset($_POST['submit']) && isset($_POST['text']))  {
 
                                 <div class="form-group">
 
-                                    <form action="" method="POSt">
+                                    <form action="formValidateToTask9.php" method="POSt">
 
                                         <label class="form-label" for="simpleinput">Text</label>
 
                                         <input type="text" id="simpleinput" name="text" class="form-control">
-                                        <button name="submit" class="btn btn-success mt-3">Submit</button>
+                                        <button type="Submit" name="submit" class="btn btn-success mt-3">Submit</button>
 
                                 </form>
 

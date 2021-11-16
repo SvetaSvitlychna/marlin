@@ -53,17 +53,13 @@
 
                                         <tr>
                                             <?php
-                                            $host = 'localhost';
-                                            $user = 'root';
-                                            $pass = '';
-                                            $dbName = 'marlin';
 
-                                            $link = mysqli_connect($host, $user, $pass, $dbName);
-                                            $result = mysqli_query($link, 'SELECT * FROM clients');
-                                            foreach ($result as $key => $value){
-                                            //                                       echo"<pre>";
-                                            //                                         print_r($value);
-                                            //                                       echo "</pre>";
+                                            $pdo =new PDO("mysql:host=localhost;dbname=marlin;","root","");
+                                            $sql = "SELECT * FROM clients";
+                                            $statement=$pdo->prepare($sql);
+                                            $statement->execute();
+
+                                            foreach ($statement as $key => $value){
 
                                             ?>
                                             <th scope="row"><?php echo $value["id"]?></th>
